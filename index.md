@@ -1,4 +1,3 @@
-Nithin S. Ramesan
 
 ## Welcome to GitHub Pages
 
