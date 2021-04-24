@@ -1,2 +1,4 @@
-# jemdoc: menu{MENU}{index.html}, nofooter
-= Nithin S. Ramesan - Home Page
+# jemdoc: menu{MENU}{index.html}
+# jemdoc: notime
+# jemdoc: nodate
+= Nithin S Ramesan -- Home Page.
