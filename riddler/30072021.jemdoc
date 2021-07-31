@@ -1,0 +1,38 @@
+# jemdoc: menu{MENU}{riddler.html}
+= 30 July 2021
+
+== Riddler Express
+
+We have two competing teams, Riddler Nation (RN) and Conundrum Country (CC). After every three shots, CC's score will increase by 24. RN's score will be a little more random, but can be described as follows:
+
+~~~
+{}{table}{riddler_30072021}
+Num. 5's  | Num. 9's | Num. 10's | Score | Probability ||
+3|0|0|15|1\/27||
+0|0|3|30|1\/27||
+0|3|0|27|1\/27||
+0|1|2|29|3\/27||
+0|2|1|28|3\/27||
+1|2|0|23|3\/27||
+2|1|0|19|3\/27||
+1|0|2|25|3\/27||
+2|0|1|20|3\/27||
+1|1|1|24|6\/27
+~~~
+
+\n\n
+{{<font color=blue>}}Blue{{</font>}} indicates an RN win, {{<font color=red>}}red{{</font>}} an RN loss and {{<font color=green>}}green{{</font>}} a tie. 
+
+\n\n
+Hence, after a single set of three shots, RN wins with probability 11\/27, loses with probability 10\/27 and ties with probability 6\/27. Since a tie implies equal scores, these probability values describe the outcome of /any/ set of three shots, regardless of how many ties came before that. 
+
+\n\n
+Since the probability of an RN win is greater than an RN loss in a single set of three shots, *Riddler Nation is favored to win*. 
+
+=== Extra Credit
+
+The probability of Riddler Nation winning can be calculated as $\frac{11}{27} + \frac{11}{27}\times\frac{6}{27} + \frac{11}{27}\times\frac{6}{27}\times\frac{6}{27} ... = \mathbf{\frac{11}{21}}$.
+
+
+== Riddler Classic 
+
