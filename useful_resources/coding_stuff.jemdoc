@@ -1,4 +1,4 @@
-# jemdoc: menu{MENU}{coding_stuff.html}, nofooter
+# jemdoc: menu{MENU}{coding_stuff.html}{../}, nofooter
 = Useful Resources for Coding etc.
 
  - [https://jemnz.com/vim.html Vim Essentials]
