@@ -70,10 +70,57 @@ The probability of Riddler Nation winning can be calculated as \(\frac{11}{27} +
 </p>
 <h2>Riddler Classic </h2>
 <p>
+If the angle between any two links is \(\theta\), then the X and Y coordinates of the inked end of the chain can be written as
+
 </p>
+<p style="text-align:center">
+\[
+\begin{align*}
+X(\theta) &amp;= 1 + f\cos\theta + f^2\cos 2\theta + f^3\cos 3\theta + &hellip; = \sum_{k=0}^\infty f^k \cos k\theta \\
+Y(\theta) &amp;= f\sin\theta + f^2\sin 2\theta + f^3\sin 3\theta + &hellip; = \sum_{k=0}^\infty f^k \sin k\theta
+\end{align*}
+\]
+</p><p>
+<br /><br />
+
+Let's assume that &lsquo;&lsquo;moving the chain around as much as possible" means that \(\theta\) takes all values in the range \([0, 2\pi]\). The question then is: what shape does \(X(\theta), Y(\theta)\) trace?
+
+<br /><br />
+
+Let \(C = X + jY\), where \(j\) is the square root of -1. Then, we can write
+
+</p>
+<p style="text-align:center">
+\[
+\begin{align*}
+C &amp;= X + jY\\
+&amp;= \sum_{k=0}^\infty f^k \cos k\theta + j\sum_{k=0}^\infty f^k \sin k\theta\\
+&amp;= \sum_{k=0}^\infty f^k \left(\cos k\theta + j\sin k\theta\right)\\
+&amp;= \sum_{k=0}^\infty f^k e^{jk\theta}\\
+&amp;= \frac{1}{1 - fe^{j\theta}} \text{, since }|f|&lt;1\\
+&amp;= \frac{1-f\cos\theta}{1-2f\cos\theta+f^2} + j\frac{f\sin\theta}{1-2f\cos\theta+f^2}
+\end{align*}
+\]
+</p><p>Equating the real and imaginary parts, we get that \(X=\frac{1-f\cos\theta}{1-2f\cos\theta+f^2}\) and \(Y=\frac{f\sin\theta}{1-2f\cos\theta+f^2}\).
+<br /><br />
+Plotting this for different values of \(f\), we see that the resulting shape looks like an ellipse or circle. 
+
+</p>
+<table class="imgtable"><tr><td>
+<img src="./30072021_fig/shape_f_0.6.png" alt="plot for f=0.6" />&nbsp;</td>
+<td align="left"></td></tr></table>
+<p>A little more algebra indicates that the curve satisfies the equation
+
+</p>
+<p style="text-align:center">
+\[
+\left(X-\frac{1}{1-f^2}\right)^2 + Y^2 = \left(\frac{f}{1-f^2}\right)^2,
+\]
+</p><p>
+which means that the shape is a <b>circle</b>, with center \(\left(\frac{1}{1-f^2}, 0\right)\) and radius \(\frac{f}{1-f^2}\).</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2021-07-30 23:13:54 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2021-08-01 12:03:41 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
