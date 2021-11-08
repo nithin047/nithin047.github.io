@@ -1,0 +1,17 @@
+# jemdoc: menu{MENU}{riddler.html}{../}
+= 05 November 2021
+
+== Riddler Express
+
+This is an interesting problem - it immediately seems related to the concept in social networks that says `your friends are more likely to have more friends than you', since you're more likely to be connected to well-connected people. Let's see if my hunch plays out.\n\n
+
+We want to calculate the expected number of friends any one of Marcia's friends has. Since everything in this problem is symmetric, /all/ of Marcia's friends have the same expected number of friends. Let's consider one of her friends, who we'll name Perrin. Perrin has at least one friend (Marcia) and 99 other potential friends. \n\n Since all friendships are i.i.d, Perrin has $1 + \frac{99}{2} = \mathbf{50.5}$ friends on average. \n\n
+Note that this is larger than Marcia's expected number of friends, which is $\mathbf{50}$. This isn't really because Marcia is more likely to be connected to well-connected people -- more that we're conditioning on the existence of /at least one/ friend for Perrin.
+
+
+== Riddler Classic 
+
+It seems as if the most straightforward way to do this is to write a program to look for such numbers. Solving this analytically seems like it will require a grasp of number theory far beyond my own. \n\n
+
+
+This is straightforward to code ([https://github.com/nithin047/riddler/blob/master/07112021/find_numbers.py here] is my script) and after $36$, the first such number is $\mathbf{378}$. For extra credit, the next two are $\mathbf{3906}$ and $\mathbf{49600}$.
