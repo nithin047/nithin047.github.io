@@ -1,0 +1,4 @@
+# jemdoc: menu{MENU}{latex_stuff.html}{../}, nofooter
+= $\LaTeX$ Stuff
+
+- [https://detexify.kirelabs.org/classify.html Detexify]
