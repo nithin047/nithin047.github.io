@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>18 March 2022</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-item"><a href="../index.html">Home</a></div>
+<div class="menu-category">Fun Stuff</div>
+<div class="menu-item"><a href="../riddler.html" class="current">Riddler</a></div>
+<div class="menu-category">Useful Resources</div>
+<div class="menu-item"><a href=".././useful_resources/jemdoc_cheatsheet.html">Jemdoc&nbsp;Cheatsheet</a></div>
+<div class="menu-item"><a href=".././useful_resources/coding_stuff.html">Coding&nbsp;Stuff</a></div>
+<div class="menu-item"><a href=".././useful_resources/latex_stuff.html">\(\LaTeX\)&nbsp;Stuff</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>18 March 2022</h1>
+<div id="subtitle">
+</div>
+</div>
+<h2>Riddler Express</h2>
+<p>
+Along with assuming that all months have equal lengths, we will also make the assumption that every person's birthday is independent of everyone else's, and that every person's birthday is uniformly distributed over all 12 months. Then,
+</p>
+<p style="text-align:center">
+\[
+\begin{align*}
+&amp;\mathbb{P}[\text{no one has a birthday in March}]\\
+&amp;= \mathbb{P}[\text{a single person doesn't have a birthday in March}]^{40}\\
+&amp;= \left(\frac{11}{12}\right)^{40}\\
+&amp;\approx 0.03079&hellip;
+\end{align*}
+\]
+</p><p>
+<br /><br />
+So there's about a 3% chance that no one has a birthday in March &ndash; small, but not insignificant.
+
+</p>
+<h3>Extra Credit</h3>
+<p>
+For extra credit, we need to calculate the probability that there is at least one month in the year during which none of the 40 people had birthdays. <br /> <br />
+
+This problem in turn can be reduced to the following question: assume that we have 40 labelled balls and 12 labelled bins, and we toss balls into bins in an i.i.d. fashion. What is the probability (which we will denote by \(p_{birthday}\)) that at the end of all the tossing, at least one bin is empty? <br /><br /> 
+
+First note that there are \(12^{40}\) ways for the balls to be distributed into bins. We can calculate the required probability using an inclusion-exclusion summation. <br /><br />
+Let \(C_1\) be the event that exactly one bin is empty, let \(C_2\) be the event that exactly bins are empty, and so on. Then,
+</p>
+<p style="text-align:center">
+\[
+\begin{align*}
+p_{birthday} &amp;= \frac{1}{12^{40}} \left(C_1 - C_2 + C_3 - &hellip;\right)\\
+&amp;= \frac{1}{12^{40}}\sum_{n = 1}^{11} C_n
+\end{align*}
+\]
+</p><p>where
+</p>
+<p style="text-align:center">
+\[
+\begin{align*}
+C_n &amp;= {12 \choose n} \times (12-n)^{40}, 1 \leq n&lt;12.
+\end{align*}
+\]
+</p><p>
+
+</p>
+<h2>Riddler Classic </h2>
+<p>
+Let's denote the encoding using \(F\), i.e., if an integer \(a\) is encoded by the triple \((m, n, q)\) then
+</p>
+<p style="text-align:center">
+\[
+\begin{equation*}
+a = F(m, n, q). 
+\end{equation*}
+\]
+</p><p>
+We'll define a few more things that'll make notation easy. Let \(\{1, 1, 2, 3, 5, 8, 13, &hellip;\}\) be the Fibonacci sequence (possibly truncated, depending on where you think it starts) and let \(f_n\) be the \(n^{th}\) element of the sequence. Then we can write
+</p>
+<p style="text-align:center">
+\[
+\begin{equation*}
+F(m, n, q) = f_q m + f_{q+1} n. 
+\end{equation*}
+\]
+</p><p>
+We want to find \(G(a)\), where
+</p>
+<p style="text-align:center">
+\[
+\begin{equation*}
+G(a) = \max_q \{(m, n, q) | a = F(m, n, q)\}. 
+\end{equation*}
+\]
+</p><p>
+After this, things are easy. Using the bounds \(m \geq 1\) and \(n \geq 1\), for every \(a\) we can find the largest \(q\) such that \(a = F(m, n, q)\) might have a solution. After that, we only have to plug in values and check. We get:
+
+</p>
+<p style="text-align:center">
+\[
+\begin{align*}
+G(81) &amp;= (3, 2, 7)\\
+G(179) &amp;= (11, 7, 6).
+\end{align*}
+\]
+</p><div id="footer">
+<div id="footer-text">
+Page generated 2022-03-23 15:25:59 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
