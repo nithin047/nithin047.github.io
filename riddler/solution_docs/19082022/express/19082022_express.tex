@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}       
+\usepackage{amsmath,amsfonts,amssymb, amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Riddler Express}
+\date{August 19, 2022}
+\author{Nithin Ramesan}
+
+
+\begin{document}
+	\maketitle
+	\section{Solution}
+	Let $\mathcal{I}$\% be the specific interest rate that guarantees that the Rule of 72 is exactly correct. Let $t$ be the actual doubling time for this interest rate, and let $t'$ be the doubling time predicted by the Rule of 72. We can then write:
+	\begin{align}
+		\left(1 + \frac{\mathcal{I}}{100}\right)^t = 2,
+	\end{align}
+\begin{align}
+	t' = \frac{72}{\mathcal{I}},
+\end{align}
+and
+\begin{align}
+	t=t'.
+\end{align}
+Combining these equations and with some rearrangement of terms, we get
+\begin{align}
+	\label{eq:final}
+	\frac{\ln 2}{\ln \left(1 + \frac{\mathcal{I}}{100}\right)} = \frac{72}{\mathcal{I}},
+\end{align}
+where $\ln$ is the natural logarithm. (\ref{eq:final}) can be solved numerically via any number of root-finding algorithms to finally yield the required value of interest rate:
+\begin{center}
+	$\mathcal{I}=7.847$, or the interest rate is $7.847$\%.
+\end{center}
+\section{Where does the Rule of 72 come from?}
+As a side exercise, I was curious how one arrives at the Rule of 72. It's easy to see by looking at the right-hand side of (\ref{eq:final}) and using the approximation $\ln(1+x)\approx x$ for small $x$:
+\begin{align*}
+	\frac{\ln 2}{\ln \left(1 + \frac{\mathcal{I}}{100}\right)} &\approx \frac{100\ln 2}{\mathcal{I}}\\
+	&= \frac{69.31}{\mathcal{I}}.
+\end{align*}
+Picking $72$ as the numerator instead of $69.31$ makes sense because $72$ is divisible by most whole numbers less than $10$ (which is the range interest rates tend to fall in): $1, 2, 3, 4, 6, 8$ and $9$. $5 \text{ and } 7$ can be handled by assuming that $69.31 \approx 70$.
+\end{document}
